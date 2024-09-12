@@ -1,0 +1,20 @@
+:root {
+  --color-dark: #000;
+  --color-darkest-gray: #5C5C5C;
+  --color-dark-gray: #9D9D9D;
+  --color-gray-first: #BDBDBD;
+  --color-gray-second: #EAEAEA;
+  --color-gray-alt: #F3F3F3;
+  --color-white: #FFF;
+
+  --border-radius-big: 40px;
+  --border-radius-average: 20px;
+  --border-radius-small: 10px;
+  --border-radius-smallest: 8px;
+
+  --border: 1px solid var(--color-gray-alt);
+
+  --font-family-base: 'Inter', sans-serif;
+
+  --transition-duration: 0.2s;
+}

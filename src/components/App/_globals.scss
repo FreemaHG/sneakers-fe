@@ -1,0 +1,25 @@
+body {
+  // используем переменную со шрифтом из _variables.scss
+  font-family: var(--font-family-base);
+  font-weight: 400;
+  line-height: 1.28;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+* {
+  font-family: var(--font-family-base);
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  text-decoration: none;  // убираем нижнее подчеркивание
+  color: inherit;  // цвет будет наследоваться от родителя, т.е. от body и будет черным
+}
