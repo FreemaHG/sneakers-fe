@@ -2,6 +2,118 @@
 function App() {
   return (
     <div className="wrapper">
+
+      {/* всплывающее меню справа */}
+      <div className="overlay">
+        <div className="cart-page">
+          <div className="cart-page__header">
+            <h2 className="cart-page__title">Корзина</h2>
+            <img className="cart-small__remove" src="/images/icons/remove.svg" alt="Remove"/>
+          </div>
+          <ul className="cart-page__list">
+            <li className="cart-small">
+              <img className="cart-small__image" width={70} height={70} src="/images/sneakers/1.jpg" alt="Sneaker"/>
+              <div className="cart-small__description">
+                <p className="cart-small__name">Мужские Кроссовки Nike Air Max 270</p>
+                <span className="cart-small__price">12&nbsp;999&nbsp;руб.</span>
+              </div>
+              <img className="cart-small__remove" src="/images/icons/remove.svg" alt="Remove"/>
+            </li>
+            <li className="cart-small">
+              <img className="cart-small__image" width={70} height={70} src="/images/sneakers/1.jpg" alt="Sneaker"/>
+              <div className="cart-small__description">
+                <p className="cart-small__name">Мужские Кроссовки Nike Air Max 270</p>
+                <span className="cart-small__price">12&nbsp;999&nbsp;руб.</span>
+              </div>
+              <img className="cart-small__remove" src="/images/icons/remove.svg" alt="Remove"/>
+            </li>
+
+            <li className="cart-small">
+              <img className="cart-small__image" width={70} height={70} src="/images/sneakers/1.jpg" alt="Sneaker"/>
+              <div className="cart-small__description">
+                <p className="cart-small__name">Мужские Кроссовки Nike Air Max 270</p>
+                <span className="cart-small__price">12&nbsp;999&nbsp;руб.</span>
+              </div>
+              <img className="cart-small__remove" src="/images/icons/remove.svg" alt="Remove"/>
+            </li>
+            <li className="cart-small">
+              <img className="cart-small__image" width={70} height={70} src="/images/sneakers/1.jpg" alt="Sneaker"/>
+              <div className="cart-small__description">
+                <p className="cart-small__name">Мужские Кроссовки Nike Air Max 270</p>
+                <span className="cart-small__price">12&nbsp;999&nbsp;руб.</span>
+              </div>
+              <img className="cart-small__remove" src="/images/icons/remove.svg" alt="Remove"/>
+            </li>
+            <li className="cart-small">
+              <img className="cart-small__image" width={70} height={70} src="/images/sneakers/1.jpg" alt="Sneaker"/>
+              <div className="cart-small__description">
+                <p className="cart-small__name">Мужские Кроссовки Nike Air Max 270</p>
+                <span className="cart-small__price">12&nbsp;999&nbsp;руб.</span>
+              </div>
+              <img className="cart-small__remove" src="/images/icons/remove.svg" alt="Remove"/>
+            </li>
+            <li className="cart-small">
+              <img className="cart-small__image" width={70} height={70} src="/images/sneakers/1.jpg" alt="Sneaker"/>
+              <div className="cart-small__description">
+                <p className="cart-small__name">Мужские Кроссовки Nike Air Max 270</p>
+                <span className="cart-small__price">12&nbsp;999&nbsp;руб.</span>
+              </div>
+              <img className="cart-small__remove" src="/images/icons/remove.svg" alt="Remove"/>
+            </li>
+            <li className="cart-small">
+              <img className="cart-small__image" width={70} height={70} src="/images/sneakers/1.jpg" alt="Sneaker"/>
+              <div className="cart-small__description">
+                <p className="cart-small__name">Мужские Кроссовки Nike Air Max 270</p>
+                <span className="cart-small__price">12&nbsp;999&nbsp;руб.</span>
+              </div>
+              <img className="cart-small__remove" src="/images/icons/remove.svg" alt="Remove"/>
+            </li>
+            <li className="cart-small">
+              <img className="cart-small__image" width={70} height={70} src="/images/sneakers/1.jpg" alt="Sneaker"/>
+              <div className="cart-small__description">
+                <p className="cart-small__name">Мужские Кроссовки Nike Air Max 270</p>
+                <span className="cart-small__price">12&nbsp;999&nbsp;руб.</span>
+              </div>
+              <img className="cart-small__remove" src="/images/icons/remove.svg" alt="Remove"/>
+            </li>
+            <li className="cart-small">
+              <img className="cart-small__image" width={70} height={70} src="/images/sneakers/1.jpg" alt="Sneaker"/>
+              <div className="cart-small__description">
+                <p className="cart-small__name">Мужские Кроссовки Nike Air Max 270</p>
+                <span className="cart-small__price">12&nbsp;999&nbsp;руб.</span>
+              </div>
+              <img className="cart-small__remove" src="/images/icons/remove.svg" alt="Remove"/>
+            </li>
+            <li className="cart-small">
+              <img className="cart-small__image" width={70} height={70} src="/images/sneakers/1.jpg" alt="Sneaker"/>
+              <div className="cart-small__description">
+                <p className="cart-small__name">Мужские Кроссовки Nike Air Max 270</p>
+                <span className="cart-small__price">12&nbsp;999&nbsp;руб.</span>
+              </div>
+              <img className="cart-small__remove" src="/images/icons/remove.svg" alt="Remove"/>
+            </li>
+
+          </ul>
+          <div className="cart-page__price-block">
+            <div className="price-block">
+              <p className="price-block__text">Итого:</p>
+              <div className="price-block__border-buttom"></div>
+              <p className="price-block__price">21 498 руб.</p>
+            </div>
+            <div className="price-block">
+              <p className="price-block__text">Налог 5%:</p>
+              <div className="price-block__border-buttom"></div>
+              <p className="price-block__price">1074 руб.</p>
+            </div>
+            <button className="button price-block__btn">
+              Оформить заказ
+              <img src="/images/icons/arrow-right.svg" alt="Arrow right"/>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
       <header className="header">
         <div className="logo">
           <svg
