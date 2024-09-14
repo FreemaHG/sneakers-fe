@@ -53,17 +53,18 @@
       }
     }
 
-    .button {
-      width: 32px;
-      height: 32px;
-      background: var(--color-white);
-      border: var(--border);
-      border-radius: var(--border-radius-smallest);
-      box-sizing: border-box;
 
-      &:hover {
-        cursor: pointer;
-      }
+  }
+  .button {
+    width: 32px;
+    height: 32px;
+    background: var(--color-white);
+    border: var(--border);
+    border-radius: var(--border-radius-smallest);
+    box-sizing: border-box;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }
