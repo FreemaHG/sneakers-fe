@@ -1,0 +1,35 @@
+.cart {
+  display: flex;
+  align-items: center;
+  padding: 30px 20px;
+  border-radius: var(--border-radius-average);
+  border: var(--border);
+  background: var(--color-white);
+  transition-duration: var(--transition-duration);
+
+  &:hover {
+    box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.05);
+    transform: scale(0.98);
+    cursor: pointer;
+  }
+
+  .image {
+    margin-right: 20px;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+  }
+
+  .name {
+    width: 150px;
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 14px;
+    font-weight: 700;
+  }
+}

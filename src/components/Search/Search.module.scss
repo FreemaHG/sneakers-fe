@@ -1,0 +1,15 @@
+.block {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-gray-alt);
+  border-radius: var(--border-radius-small);
+  padding: 0 15px;
+
+  input {
+    width: 200px;
+    padding: 13px;
+    border: 0;
+    outline: none;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,15 @@
+@import 'normalize',
+'variables',
+'globals';
+
+body {
+  background-color: #E7F6FF;
+}
+
+.wrapper {
+  max-width: 1080px;
+  margin: 85px auto;
+  border-radius: var(--border-radius-average);
+  background: #FFF;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.04);
+}
