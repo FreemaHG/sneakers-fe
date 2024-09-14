@@ -4,8 +4,10 @@ import styles from './Header.module.scss';
 /**
  * @component
  * @description шапка сайта
+ * @prop {function} openSidebar - смена флага для вывода сайдбара
  */
-const Header = () => {
+const Header = ({ openSidebar }) => {
+
 	return (
 		<header className={styles['header']}>
 			<div className={styles['logo-block']}>
@@ -30,7 +32,7 @@ const Header = () => {
 				</div>
 			</div>
 			<ul className={styles['icons-list']}>
-				<li className={styles['icons-item']}>
+				<li className={styles['icons-item']} onClick={() => openSidebar(true)}>
 					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path
 							d="M7.54548 18.1818C7.99735 18.1818 8.36366 17.8155 8.36366 17.3636C8.36366 16.9118 7.99735 16.5455 7.54548 16.5455C7.09361 16.5455 6.72729 16.9118 6.72729 17.3636C6.72729 17.8155 7.09361 18.1818 7.54548 18.1818Z"

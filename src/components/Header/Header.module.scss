@@ -48,6 +48,10 @@
       align-items: center;
       column-gap: 10px;
 
+      &:hover {
+        cursor: pointer;
+      }
+
       &-text {
         color: var(--color-darkest-gray);
         font-size: 14px;

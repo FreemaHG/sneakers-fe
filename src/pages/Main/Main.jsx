@@ -20,11 +20,9 @@ const Main = () => {
 				<Search/>
 			</div>
 			<div className={styles['card-list']}>
-				{
-					sneakers.map(sneaker => {
+				{sneakers.map(sneaker => {
 						return <CardAverageSize key={sneaker.id} {...sneaker} />;
-					})
-				}
+					})}
 			</div>
 		</main>
 	);

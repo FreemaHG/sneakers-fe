@@ -1,4 +1,4 @@
-import cn from "classnames";
+import cn from 'classnames';
 
 import CardSmallSize from '../Card/CardSmallSize/CardSmallSize.jsx';
 
@@ -8,17 +8,24 @@ import styles from './PopUpSidebar.module.scss';
 /**
  * @component
  * @description Всплывающее меню с товарами
+ * @prop {function} openSidebar - смена флага для вывода сайдбара
  */
-const PopUpSidebar = () => {
+const PopUpSidebar = ({ openSidebar }) => {
+
 	return (
 		<div className={styles['overlay']}>
 			<div className={styles['sidebar']}>
 				<div className={styles['header-block']}>
 					<h2 className={styles['title']}>Корзина</h2>
-					<img className={styles['remove-button']} src="/images/icons/remove.svg" alt="Remove"/>
+					<img
+						className={styles['remove-button']}
+						src="/images/icons/remove.svg"
+						alt="Закрыть корзину"
+						onClick={() => openSidebar(false)}
+					/>
 				</div>
 				<ul className={styles['card-list']}>
-					<CardSmallSize />
+					<CardSmallSize/>
 				</ul>
 				<div className={styles['register-order-block']}>
 					<div className={styles['price-block']}>
