@@ -7,11 +7,14 @@ import Main from './pages/Main/Main.jsx';
 
 function App() {
 
+	// флаг для открытия и закрытия сайдбара
 	const [openSidebar, setOpenSidebar] = useState(false);
+
+	const closeSidebar = () => setOpenSidebar(false);
 
 	return (
 		<div className="wrapper">
-			{openSidebar && <PopUpSidebar openSidebar={setOpenSidebar} />}
+			{openSidebar && <PopUpSidebar onClose={closeSidebar} />}
 			<Header openSidebar={setOpenSidebar} />
 			<Main />
 		</div>

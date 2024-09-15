@@ -72,3 +72,5 @@ export const sneakers = [
 		"image": "/images/sneakers/12.jpg"
 	}
 ]
+
+export const apiUrl = "https://66e6826d17055714e589bdc3.mockapi.io/items";

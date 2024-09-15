@@ -1,16 +1,21 @@
+import { useContext } from 'react';
 import cn from 'classnames';
 
 import CardSmallSize from '../Card/CardSmallSize/CardSmallSize.jsx';
+import { CartContext } from '../../context/CartContextProvider.jsx';
 
 import styles from './PopUpSidebar.module.scss';
 
 
 /**
  * @component
- * @description Всплывающее меню с товарами
- * @prop {function} openSidebar - смена флага для вывода сайдбара
+ * @description Сайдбар с товарами в корзине
+ * @prop {function} onClose - закрытие сайдбара
  */
-const PopUpSidebar = ({ openSidebar }) => {
+const PopUpSidebar = ({ onClose }) => {
+
+	// получаем данные из контекста о товарах в корзине
+	const { productsInCart } = useContext(CartContext);
 
 	return (
 		<div className={styles['overlay']}>
@@ -21,11 +26,16 @@ const PopUpSidebar = ({ openSidebar }) => {
 						className={styles['remove-button']}
 						src="/images/icons/remove.svg"
 						alt="Закрыть корзину"
-						onClick={() => openSidebar(false)}
+						onClick={() => onClose()}
 					/>
 				</div>
 				<ul className={styles['card-list']}>
-					<CardSmallSize/>
+					{productsInCart.map(product => {
+						return <CardSmallSize
+							key={product.id}
+							product={product}
+						/>;
+					})}
 				</ul>
 				<div className={styles['register-order-block']}>
 					<div className={styles['price-block']}>
