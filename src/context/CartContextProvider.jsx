@@ -1,4 +1,4 @@
-import { createContext, useReducer, useState } from 'react';
+import { createContext, useReducer } from 'react';
 
 // контекст с данными о товарах в корзине
 export const CartContext = createContext({

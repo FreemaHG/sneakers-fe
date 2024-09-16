@@ -18,8 +18,8 @@ const PopUpSidebar = ({ onClose }) => {
 	const { productsInCart } = useContext(CartContext);
 
 	return (
-		<div className={styles['overlay']}>
-			<div className={styles['sidebar']}>
+		<div className={styles['overlay']} onClick={onClose}>
+			<div className={styles['sidebar']} onClick={event => event.stopPropagation()}>
 				<div className={styles['header-block']}>
 					<h2 className={styles['title']}>Корзина</h2>
 					<img

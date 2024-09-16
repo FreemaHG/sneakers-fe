@@ -9,6 +9,7 @@ body {
 .wrapper {
   position: relative;
   max-width: 1080px;
+  min-height: 100vh;
   margin: 85px auto;
   border-radius: var(--border-radius-average);
   background: #FFF;

@@ -12,4 +12,13 @@
     outline: none;
     font-size: 14px;
   }
+
+  .remove-icon {
+    width: 26px;
+    aspect-ratio: 1;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

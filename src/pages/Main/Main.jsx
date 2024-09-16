@@ -16,6 +16,7 @@ import styles from './Main.module.scss';
 const Main = () => {
 
 	const [products, setProducts] = useState([]);
+	const [searchValue, setSearchValue] = useState('');
 
 	const getProduct = async () => {
 		const { data } = await axios.get(apiUrl);
@@ -29,11 +30,21 @@ const Main = () => {
 	return (
 		<main className={styles['content']}>
 			<div className={styles['header']}>
-				<Title>Все кроссовки</Title>
-				<Search/>
+				{
+					searchValue
+						? <p className={styles['search-title']}>Поиск по: <b>{`${searchValue}`}</b></p>
+						: <Title>Все кроссовки</Title>
+				}
+				<Search
+					searchValue={searchValue}
+					setSearchValue={setSearchValue}
+				/>
 			</div>
 			<div className={styles['card-list']}>
-				{products.map(product => {
+				{products
+					// фильтрация товаров по частичному совпадению без учета регистра
+					.filter(product => product.name.toLowerCase().includes(searchValue.toLowerCase()))
+					.map(product => {
 					return <CardAverageSize
 						key={product.id}
 						product={product}
