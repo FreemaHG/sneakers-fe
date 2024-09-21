@@ -1,22 +1,17 @@
-.content {
-  padding-bottom: 40px;
-  padding-inline: 60px;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-
-    .search-title {
-      font-size: 16px;
-    }
+  .search-title {
+    font-size: 16px;
   }
+}
 
-  .card-list {
-    display: flex;
-    justify-content: flex-start;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
+.card-list {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
 }
