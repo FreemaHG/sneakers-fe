@@ -1,10 +1,11 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import cn from 'classnames';
 
 import CardSmallSize from '../Card/CardSmallSize/CardSmallSize.jsx';
 import { CartContext } from '../../context/CartContextProvider.jsx';
 
 import styles from './PopUpSidebar.module.scss';
+import axios from 'axios';
 
 
 /**
@@ -15,10 +16,11 @@ import styles from './PopUpSidebar.module.scss';
 const PopUpSidebar = ({ onClose }) => {
 
 	// получаем данные из контекста о товарах в корзине
-	const { productsInCart } = useContext(CartContext);
+	const { productsInCart, dispatchCart } = useContext(CartContext);
 
 	return (
 		<div className={styles['overlay']} onClick={onClose}>
+			{/* event.stopPropagation() останавливаем действие при клике по самому сайдбару (чтобы сайдбар не закрывался) */}
 			<div className={styles['sidebar']} onClick={event => event.stopPropagation()}>
 				<div className={styles['header-block']}>
 					<h2 className={styles['title']}>Корзина</h2>

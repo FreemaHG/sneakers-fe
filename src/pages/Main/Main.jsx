@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 import Title from '../../components/Title/Title.jsx';
 import Search from '../../components/Search/Search.jsx';
 import CardAverageSize from '../../components/Card/CardAverageSize/CardAverageSize.jsx';
-import { apiUrl } from '../../helpers/constants.js';
 
 import styles from './Main.module.scss';
+import { CartContext } from '../../context/CartContextProvider.jsx';
+import getEnvVariables from '../../helpers/envVariables.js';
 
 
 /**
@@ -18,13 +19,25 @@ const Main = () => {
 	const [products, setProducts] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
 
-	const getProduct = async () => {
-		const { data } = await axios.get(apiUrl);
+	// переменные окружения
+	const envVariables = getEnvVariables();
+
+	// получаем данные из контекста о товарах в корзине
+	const { dispatchCart } = useContext(CartContext);
+
+	const getProducts = async () => {
+		const { data } = await axios.get(`${envVariables.BASE_URL}/products`);
 		setProducts(data);
 	};
 
+	const getProductsInCart = async () => {
+		const { data } = await axios.get(`${envVariables.BASE_URL}/cart`);
+		dispatchCart({ type: 'CREATE', products: data });
+	}
+
 	useEffect(() => {
-		getProduct();
+		getProducts();
+		getProductsInCart()
 	}, []);
 
 	return (
@@ -43,7 +56,7 @@ const Main = () => {
 			<div className={styles['card-list']}>
 				{products
 					// фильтрация товаров по частичному совпадению без учета регистра
-					.filter(product => product.name.toLowerCase().includes(searchValue.toLowerCase()))
+					.filter(product => product.title.toLowerCase().includes(searchValue.toLowerCase()))
 					.map(product => {
 					return <CardAverageSize
 						key={product.id}

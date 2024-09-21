@@ -1,6 +1,7 @@
 .block {
   display: flex;
   align-items: center;
+  width: 250px;
   border: 1px solid var(--color-gray-alt);
   border-radius: var(--border-radius-small);
   padding: 0 15px;

@@ -29,6 +29,10 @@ export const CartContextProvider = ({ children }) => {
 export function cartReducer(state, action) {
 	// добавление и удаление товара из корзины в зависимости от переданного ключа
 	switch (action.type) {
+		// наполнение корзины товарами
+		case "CREATE":
+			// возвращаем все переданные товары
+			return action.products;
 		// добавление товара в корзину
 		case "ADD":
 			// возвращаем старое состояние с товарами + в конце новый добавленный товар
@@ -36,7 +40,7 @@ export function cartReducer(state, action) {
 		// удаление товара из корзины
 		case "DELETE":
 			// возвращаем массив с товарами, чьи id не равны переданному
-			return state.filter(product => product !== action.product);
+			return state.filter(product => product.product_id !== action.product_id);
 		// возврат значения без изменений, если никакое из условий не подошло
 		default:
 			return state;

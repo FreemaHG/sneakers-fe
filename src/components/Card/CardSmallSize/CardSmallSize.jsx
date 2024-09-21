@@ -1,6 +1,10 @@
-import styles from './CardSmallSize.module.scss';
 import { useContext } from 'react';
+
 import { CartContext } from '../../../context/CartContextProvider.jsx';
+
+import styles from './CardSmallSize.module.scss';
+import getEnvVariables from '../../../helpers/envVariables.js';
+import axios from 'axios';
 
 /**
  * @component
@@ -12,15 +16,19 @@ const CardSmallSize = ({ product }) => {
 	// функция для передачи действия в редюсер для изменения данных о товарах в корзине в контексте
 	const { dispatchCart } = useContext(CartContext);
 
-	const deleteProduct = () => {
-		dispatchCart({ type: "DELETE", product: product });
+	const envVariables = getEnvVariables();
+
+	const deleteProduct = async () => {
+		await axios.delete(`${envVariables.BASE_URL}/cart/${product.product_id}`);
+		// TODO Менять состояние только после успешного ответа!!!
+		dispatchCart({ type: "DELETE", product_id: product.product_id });
 	};
 
 	return (
 		<li className={styles['cart']}>
 			<img className={styles['image']} width={70} height={70} src={product.image} alt="Sneaker"/>
 			<div className={styles['description']}>
-				<p className={styles['name']}>{product.name}</p>
+				<p className={styles['title']}>{product.title}</p>
 				<span className={styles['price']}>{product.price}&nbsp;руб.</span>
 			</div>
 			<img
