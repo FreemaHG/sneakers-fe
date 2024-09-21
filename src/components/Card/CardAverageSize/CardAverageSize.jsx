@@ -5,6 +5,7 @@ import { CartContext } from '../../../context/CartContextProvider.jsx';
 
 import styles from './CardAverageSize.module.scss';
 import getEnvVariables from '../../../helpers/envVariables.js';
+import { FavouriteContext } from '../../../context/FavouriteContextProvider.jsx';
 
 /**
  * @component
@@ -19,8 +20,9 @@ const CardAverageSize = ({ product }) => {
 
 	const envVariables = getEnvVariables();
 
-	// товары в корзине и функция для передачи действия в редюсер для изменения данных о товарах в корзине в контексте
+	// товары в корзине и избранные товары + функции для передачи действия в редюсер для изменения данных в контексте
 	const { productsInCart, dispatchCart } = useContext(CartContext);
+	const { favouriteProducts, dispatchFavourite } = useContext(FavouriteContext);
 
 	// проверка и смена иконки при изменении товаров в корзине
 	useEffect(() => {
@@ -34,23 +36,41 @@ const CardAverageSize = ({ product }) => {
 		}
 	}, [productsInCart]);
 
+	// проверка и смена иконки при изменении товаров в избранном
+	useEffect(() => {
+		const res = favouriteProducts.find(i => i.product_id === product.id);
+
+		if (res && !isAddedToFavourite) {
+			setIsAddedToFavourite(true);
+		}
+		if (!res && isAddedToFavourite) {
+			setIsAddedToFavourite(false);
+		}
+	}, [favouriteProducts]);
+
 	const changeStatusToCart = async () => {
 		// удаление товара из корзины
 		if (isAddedToCart) {
 			await axios.delete(`${envVariables.BASE_URL}/cart/${product.id}`);
-			// TODO Менять состояние только после успешного ответа!!!
 			dispatchCart({ type: 'DELETE', product_id: product.id });
 			// добавление товара в корзину
 		} else {
-			// отправка данных на бэк
 			const { data } = await axios.post(`${envVariables.BASE_URL}/cart`, { product_id: product.id });
-			// TODO Менять состояние только после успешного ответа!!!
 			dispatchCart({ type: 'ADD', product: data });  // изменение состояния в хранилище
 		}
 		setIsAddedToCart(!isAddedToCart);
 	};
 
-	const changeStatusToFavourite = () => {
+	const changeStatusToFavourite = async () => {
+		// удаление товара из избранного
+		if (isAddedToFavourite) {
+			await axios.delete(`${envVariables.BASE_URL}/favourite/${product.id}`);
+			dispatchFavourite({ type: 'DELETE', product_id: product.id });
+			// добавление товара в избранное
+		} else {
+			const { data } = await axios.post(`${envVariables.BASE_URL}/favourite`, { product_id: product.id });
+			dispatchFavourite({ type: 'ADD', product: data });  // изменение состояния в хранилище
+		}
 		setIsAddedToFavourite(!isAddedToFavourite);
 	};
 

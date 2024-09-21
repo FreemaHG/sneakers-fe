@@ -5,6 +5,7 @@ import App from './App.jsx'
 import { CartContextProvider } from './context/CartContextProvider.jsx';
 
 import './styles/styles.scss'
+import { FavouriteContextProvider } from './context/FavouriteContextProvider.jsx';
 
 
 createRoot(document.getElementById('root')).render(
@@ -14,7 +15,9 @@ createRoot(document.getElementById('root')).render(
       обеспечивая таким образом доступ к контексту всем компонентам приложения
     */}
     <CartContextProvider>
-      <App />
+      <FavouriteContextProvider>
+        <App />
+      </FavouriteContextProvider>
     </CartContextProvider>
   </StrictMode>
 );

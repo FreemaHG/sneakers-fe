@@ -8,6 +8,7 @@ import CardAverageSize from '../../components/Card/CardAverageSize/CardAverageSi
 import styles from './Main.module.scss';
 import { CartContext } from '../../context/CartContextProvider.jsx';
 import getEnvVariables from '../../helpers/envVariables.js';
+import { FavouriteContext } from '../../context/FavouriteContextProvider.jsx';
 
 
 /**
@@ -22,8 +23,9 @@ const Main = () => {
 	// переменные окружения
 	const envVariables = getEnvVariables();
 
-	// получаем данные из контекста о товарах в корзине
+	// данные из контекста о товарах в корзине и избранных товарах
 	const { dispatchCart } = useContext(CartContext);
+	const { dispatchFavourite } = useContext(FavouriteContext);
 
 	const getProducts = async () => {
 		const { data } = await axios.get(`${envVariables.BASE_URL}/products`);
@@ -33,11 +35,17 @@ const Main = () => {
 	const getProductsInCart = async () => {
 		const { data } = await axios.get(`${envVariables.BASE_URL}/cart`);
 		dispatchCart({ type: 'CREATE', products: data });
-	}
+	};
+
+	const getFavouriteProducts = async () => {
+		const { data } = await axios.get(`${envVariables.BASE_URL}/favourite`);
+		dispatchFavourite({ type: 'CREATE', products: data });
+	};
 
 	useEffect(() => {
 		getProducts();
-		getProductsInCart()
+		getProductsInCart();
+		getFavouriteProducts();
 	}, []);
 
 	return (
@@ -58,11 +66,11 @@ const Main = () => {
 					// фильтрация товаров по частичному совпадению без учета регистра
 					.filter(product => product.title.toLowerCase().includes(searchValue.toLowerCase()))
 					.map(product => {
-					return <CardAverageSize
-						key={product.id}
-						product={product}
-					/>;
-				})}
+						return <CardAverageSize
+							key={product.id}
+							product={product}
+						/>;
+					})}
 			</div>
 		</main>
 	);
