@@ -1,0 +1,26 @@
+.empty-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 120px;
+  aspect-ratio: 1;
+  margin-bottom: 20px;
+}
+
+.title {
+  margin-bottom: 9px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.description {
+  width: 285px;
+  margin-bottom: 40px;
+  color: var(--color-dark-gray);
+  text-align: center;
+  font-size: 16px;
+}

@@ -1,0 +1,17 @@
+.btn-back {
+  position: relative;
+
+  &:hover {
+    img {
+      transform: translateX(5px);
+    }
+  }
+
+  img {
+    position: absolute;
+    left: 35px;
+    top: 22px;
+    rotate: 180deg;
+    transition-duration: var(--transition-duration);
+  }
+}

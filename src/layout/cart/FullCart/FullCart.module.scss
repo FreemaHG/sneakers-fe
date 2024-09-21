@@ -1,0 +1,37 @@
+.card-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  margin-bottom: 70px;
+  flex: 1;
+  overflow: auto;
+}
+
+.register-order-block {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+
+  .price-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .text {
+      font-size: 16px;
+    }
+
+    .border-bottom {
+      flex: 1;
+      height: 1px;
+      margin: 0 7px;
+      border-bottom: 1px dashed var(--color-gray-alt);
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+}

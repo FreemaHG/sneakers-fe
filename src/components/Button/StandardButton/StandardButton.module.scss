@@ -1,0 +1,21 @@
+.button {
+  width: 100%;
+  padding-block: 18px;
+  color: var(--color-white);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--border-radius-average);
+  background-color: #9DD458;
+  transition-duration: var(--transition-duration);
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #abe36c;
+}
+
+.button:active {
+  background-color: #8ec54d;
+}
