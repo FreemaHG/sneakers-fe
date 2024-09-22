@@ -26,7 +26,7 @@ const CardAverageSize = ({ product }) => {
 
 	// проверка и смена иконки при изменении товаров в корзине
 	useEffect(() => {
-		const res = productsInCart.find(i => i.product_id === product.id);
+		const res = productsInCart.find(i => i.id === product.id);
 
 		if (res && !isAddedToCart) {
 			setIsAddedToCart(true);
@@ -38,7 +38,7 @@ const CardAverageSize = ({ product }) => {
 
 	// проверка и смена иконки при изменении товаров в избранном
 	useEffect(() => {
-		const res = favouriteProducts.find(i => i.product_id === product.id);
+		const res = favouriteProducts.find(i => i.id === product.id);
 
 		if (res && !isAddedToFavourite) {
 			setIsAddedToFavourite(true);
@@ -52,10 +52,10 @@ const CardAverageSize = ({ product }) => {
 		// удаление товара из корзины
 		if (isAddedToCart) {
 			await axios.delete(`${envVariables.BASE_URL}/cart/${product.id}`);
-			dispatchCart({ type: 'DELETE', product_id: product.id });
+			dispatchCart({ type: 'DELETE', id: product.id });
 			// добавление товара в корзину
 		} else {
-			const { data } = await axios.post(`${envVariables.BASE_URL}/cart`, { product_id: product.id });
+			const { data } = await axios.post(`${envVariables.BASE_URL}/cart`, { id: product.id });
 			dispatchCart({ type: 'ADD', product: data });  // изменение состояния в хранилище
 		}
 		setIsAddedToCart(!isAddedToCart);
@@ -65,10 +65,10 @@ const CardAverageSize = ({ product }) => {
 		// удаление товара из избранного
 		if (isAddedToFavourite) {
 			await axios.delete(`${envVariables.BASE_URL}/favourite/${product.id}`);
-			dispatchFavourite({ type: 'DELETE', product_id: product.id });
+			dispatchFavourite({ type: 'DELETE', id: product.id });
 			// добавление товара в избранное
 		} else {
-			const { data } = await axios.post(`${envVariables.BASE_URL}/favourite`, { product_id: product.id });
+			const { data } = await axios.post(`${envVariables.BASE_URL}/favourite`, { id: product.id });
 			dispatchFavourite({ type: 'ADD', product: data });  // изменение состояния в хранилище
 		}
 		setIsAddedToFavourite(!isAddedToFavourite);

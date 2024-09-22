@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import Main from './pages/Main/Main.jsx';
 import App from './App.jsx';
+import Favourites from './pages/Favourites/Favourites.jsx';
 
 // описание всех роутов (страниц)
 const router = createBrowserRouter([
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/favourites",
-				element: <p>Мои закладки</p>
+				element: <Favourites />
 			},
 			{
 				path: "/orders",

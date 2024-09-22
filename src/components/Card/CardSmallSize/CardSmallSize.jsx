@@ -19,9 +19,8 @@ const CardSmallSize = ({ product }) => {
 	const envVariables = getEnvVariables();
 
 	const deleteProduct = async () => {
-		await axios.delete(`${envVariables.BASE_URL}/cart/${product.product_id}`);
-		// TODO Менять состояние только после успешного ответа!!!
-		dispatchCart({ type: "DELETE", product_id: product.product_id });
+		await axios.delete(`${envVariables.BASE_URL}/cart/${product.id}`);
+		dispatchCart({ type: "DELETE", id: product.id });
 	};
 
 	return (

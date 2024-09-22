@@ -13,7 +13,7 @@ const EmptyCart = ({ onClose }) => {
 			<img className={styles['image']} src="/images/empty-cart.svg" alt="Пустая корзина"/>
 			<h3 className={styles['title']}>Корзина пустая</h3>
 			<p className={styles['description']}>Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.</p>
-			<ButtonBack onClose={onClose} >Вернуться назад</ButtonBack>
+			<ButtonBack onClick={onClose}>Вернуться назад</ButtonBack>
 		</div>
 	);
 };

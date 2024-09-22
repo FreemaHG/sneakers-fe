@@ -1,0 +1,13 @@
+.button-back {
+  all: unset;
+  cursor: pointer;
+
+  & svg {
+    transition-duration: var(--transition-duration);
+    color: var(--color-gray-second);
+
+    &:hover {
+      color: var(--color-dark-gray);
+    }
+  }
+}

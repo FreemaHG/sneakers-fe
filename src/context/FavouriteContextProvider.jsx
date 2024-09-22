@@ -38,7 +38,7 @@ export function favouriteReducer(state, action) {
 		// удаление товара из избранного
 		case "DELETE":
 			// возвращаем массив с товарами, чьи id не равны переданному
-			return state.filter(product => product.product_id !== action.product_id);
+			return state.filter(product => product.id !== action.id);
 		// возврат значения без изменений, если никакое из условий не подошло
 		default:
 			return state;
