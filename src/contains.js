@@ -1,0 +1,1 @@
+export const ITEMS_COUNT = 12;  // кол-во карточек на странице

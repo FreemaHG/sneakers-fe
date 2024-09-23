@@ -2,10 +2,11 @@ import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 
 import { CartContext } from '../../../context/CartContextProvider.jsx';
-
-import styles from './CardAverageSize.module.scss';
 import getEnvVariables from '../../../helpers/envVariables.js';
 import { FavouriteContext } from '../../../context/FavouriteContextProvider.jsx';
+
+import styles from './CardAverageSize.module.scss';
+
 
 /**
  * @component
