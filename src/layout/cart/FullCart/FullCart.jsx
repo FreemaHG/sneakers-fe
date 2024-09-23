@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../../context/CartContextProvider.jsx';
 import CardSmallSize from '../../../components/Card/CardSmallSize/CardSmallSize.jsx';
 import ButtonAhead from '../../../components/Button/ButtonAhead/ButtonAhead.jsx';
+import { getTotalSum } from '../../../helpers/totalSum.js';
 
 import styles from './FullCart.module.scss';
 
@@ -30,12 +31,12 @@ const FullCart = () => {
 				<div className={styles['price-block']}>
 					<p className={styles['text']}>Итого:</p>
 					<div className={styles['border-bottom']}></div>
-					<p className={styles['price']}>21 498 руб.</p>
+					<p className={styles['price']}>{getTotalSum(productsInCart)}&nbsp;руб.</p>
 				</div>
 				<div className={styles['price-block']}>
-					<p className={styles['text']}>Налог 5%:</p>
+					<p className={styles['text']}>Доставка:</p>
 					<div className={styles['border-bottom']}></div>
-					<p className={styles['price']}>1074 руб.</p>
+					<p className={styles['price']}>500.00 руб.</p>
 				</div>
 				<ButtonAhead>Оформить заказ</ButtonAhead>
 			</div>

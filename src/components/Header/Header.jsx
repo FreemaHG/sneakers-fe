@@ -1,5 +1,9 @@
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import cn from 'classnames';
+
+import { CartContext } from '../../context/CartContextProvider.jsx';
+import { getTotalSum } from '../../helpers/totalSum.js';
 
 import styles from './Header.module.scss';
 
@@ -10,6 +14,9 @@ import styles from './Header.module.scss';
  * @prop {function} openSidebar - смена флага для вывода сайдбара
  */
 const Header = ({ openSidebar }) => {
+
+	// товары в корзине из контекста
+	const { productsInCart } = useContext(CartContext);
 
 	return (
 		<header className={cn('container', styles['header'])}>
@@ -50,7 +57,7 @@ const Header = ({ openSidebar }) => {
 							stroke="#9B9B9B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
 						/>
 					</svg>
-					<span className={styles['icons-item-text']}>1205&nbsp;руб.</span>
+					<span className={styles['icons-item-text']}>{getTotalSum(productsInCart)}&nbsp;руб.</span>
 				</li>
 				<li>
 					{/*
