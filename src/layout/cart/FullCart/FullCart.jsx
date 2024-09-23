@@ -2,8 +2,8 @@ import { useContext } from 'react';
 
 import { CartContext } from '../../../context/CartContextProvider.jsx';
 import CardSmallSize from '../../../components/Card/CardSmallSize/CardSmallSize.jsx';
-import ButtonAhead from '../../../components/Button/ButtonAhead/ButtonAhead.jsx';
-import { getTotalSum } from '../../../helpers/totalSum.js';
+import ButtonAhead from '../../../components/Buttons/ButtonAhead/ButtonAhead.jsx';
+import { getTotalSum } from '../../../helpers/numbers.js';
 
 import styles from './FullCart.module.scss';
 

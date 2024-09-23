@@ -46,7 +46,7 @@ const Main = () => {
 	// рендер реальных либо лоадеров карточек (в зависимости от флага загрузки товаров)
 	const renderCards = () => {
 		if (isLoading) {
-			return [...Array(ITEMS_COUNT)].map(_ => <CardAverageSizeLoading/>);
+			return [...Array(ITEMS_COUNT)].map((_, index) => <CardAverageSizeLoading key={index}/>);
 		}
 		return products
 			// фильтрация товаров по частичному совпадению без учета регистра

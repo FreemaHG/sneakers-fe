@@ -4,6 +4,9 @@ import axios from 'axios';
 import { CartContext } from '../../../context/CartContextProvider.jsx';
 import getEnvVariables from '../../../helpers/envVariables.js';
 import { FavouriteContext } from '../../../context/FavouriteContextProvider.jsx';
+import { formattedNumber } from '../../../helpers/numbers.js';
+import ButtonAddCart from '../../Buttons/ButtonAddCart/ButtonAddCart.jsx';
+import ButtonAddFavourite from '../../Buttons/ButtonAddFavourite/ButtonAddFavourite.jsx';
 
 import styles from './CardAverageSize.module.scss';
 
@@ -77,10 +80,15 @@ const CardAverageSize = ({ product }) => {
 
 	return (
 		<div className={styles['card']}>
-			<img
+			{/*<img*/}
+			{/*	className={styles['favourite-icon']}*/}
+			{/*	src={isAddedToFavourite ? '/images/icons/heart-liked.svg' : '/images/icons/heart-unliked.svg'}*/}
+			{/*	alt={isAddedToFavourite ? 'Удалить товар из избранного' : 'Добавить товар в избранное'}*/}
+			{/*	onClick={changeStatusToFavourite}*/}
+			{/*/>*/}
+			<ButtonAddFavourite
 				className={styles['favourite-icon']}
-				src={isAddedToFavourite ? '/images/icons/heart-liked.svg' : '/images/icons/heart-unliked.svg'}
-				alt={isAddedToFavourite ? 'Удалить товар из избранного' : 'Добавить товар в избранное'}
+				isActive={isAddedToFavourite}
 				onClick={changeStatusToFavourite}
 			/>
 			<img className={styles['image']} src={product.image} alt="Sneakers"/>
@@ -88,12 +96,10 @@ const CardAverageSize = ({ product }) => {
 			<div className={styles['body']}>
 				<div className={styles['price-block']}>
 					<span className={styles['name']}>Цена:</span>
-					<b className={styles['price']}>{product.price}&nbsp;руб.</b>
+					<b className={styles['price']}>{formattedNumber(Number(product.price))}&nbsp;руб.</b>
 				</div>
-				<img
-					className={styles['button']}
-					src={isAddedToCart ? '/images/icons/btn-checked.svg' : '/images/icons/btn-plus.svg'}
-					alt={isAddedToCart ? 'Удалить товар из корзины' : 'Добавить товар в корзину'}
+				<ButtonAddCart
+					isActive={isAddedToCart}
 					onClick={changeStatusToCart}
 				/>
 			</div>

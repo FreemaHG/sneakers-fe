@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import cn from 'classnames';
 
 import { CartContext } from '../../context/CartContextProvider.jsx';
-import { getTotalSum } from '../../helpers/totalSum.js';
+import { getTotalSum } from '../../helpers/numbers.js';
 
 import styles from './Header.module.scss';
 

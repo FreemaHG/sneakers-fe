@@ -1,0 +1,20 @@
+.button-add-cart {
+  width: 32px;
+  aspect-ratio: 1;
+  all: inherit;
+  cursor: pointer;
+
+  color: var(--color-gray-second);
+
+  .icon-plus {
+    transition-duration: var(--transition-duration);
+
+    &:hover {
+      color: var(--color-gray-first);
+
+      & path {
+        fill: var(--color-gray-first);
+      }
+    }
+  }
+}

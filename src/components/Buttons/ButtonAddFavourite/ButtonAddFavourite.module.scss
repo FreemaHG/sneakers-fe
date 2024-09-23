@@ -1,0 +1,14 @@
+.button-add-favourite {
+  cursor: pointer;
+  transition-duration: var(--transition-duration);
+
+  &:hover {
+    color: var(--color-gray-first);
+
+    .icon-heart {
+      & path {
+        stroke: var(--color-gray-first);
+      }
+    }
+  }
+}

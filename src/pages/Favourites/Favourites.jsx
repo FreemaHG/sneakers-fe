@@ -5,8 +5,8 @@ import CardAverageSize from '../../components/Card/CardAverageSize/CardAverageSi
 import { FavouriteContext } from '../../context/FavouriteContextProvider.jsx';
 
 import styles from './Favourites.module.scss';
-import ButtonBackSmall from '../../components/Button/ButtonBackSmall/ButtonBackSmall.jsx';
-import ButtonBack from '../../components/Button/ButtonBack/ButtonBack.jsx';
+import ButtonBackSmall from '../../components/Buttons/ButtonBackSmall/ButtonBackSmall.jsx';
+import ButtonBack from '../../components/Buttons/ButtonBack/ButtonBack.jsx';
 import { useNavigate } from 'react-router-dom';
 
 

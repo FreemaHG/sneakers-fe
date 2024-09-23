@@ -5,6 +5,7 @@ import { CartContext } from '../../../context/CartContextProvider.jsx';
 import styles from './CardSmallSize.module.scss';
 import getEnvVariables from '../../../helpers/envVariables.js';
 import axios from 'axios';
+import { formattedNumber } from '../../../helpers/numbers.js';
 
 /**
  * @component
@@ -28,7 +29,7 @@ const CardSmallSize = ({ product }) => {
 			<img className={styles['image']} width={70} height={70} src={product.image} alt="Sneaker"/>
 			<div className={styles['description']}>
 				<p className={styles['title']}>{product.title}</p>
-				<span className={styles['price']}>{product.price}&nbsp;руб.</span>
+				<span className={styles['price']}>{formattedNumber(Number(product.price))}&nbsp;руб.</span>
 			</div>
 			<img
 				className={styles['remove-button']}

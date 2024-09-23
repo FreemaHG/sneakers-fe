@@ -17,13 +17,12 @@
 
 .favourite-icon {
   position: absolute;
-  width: 32px;
-  height: 32px;
-
-  &:hover {
-    cursor: pointer;
-  }
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-gray-second);
 }
+
 
 .image {
   width: 133px;
@@ -59,18 +58,5 @@
       font-size: 14px;
       font-weight: 700;
     }
-  }
-
-}
-.button {
-  width: 32px;
-  height: 32px;
-  background: var(--color-white);
-  border: var(--border);
-  border-radius: var(--border-radius-smallest);
-  box-sizing: border-box;
-
-  &:hover {
-    cursor: pointer;
   }
 }

@@ -7,5 +7,10 @@ export const getTotalSum = (products) => {
 	}).reduce((acc, i) => acc += i, 0);
 
 	// возвращаем с двумя знаками после запятой и пробелами между разрядами
-	return totalSum.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
-}
+	return formattedNumber(totalSum);
+};
+
+// возврат числа в виде строки с двумя знаками после запятой и пробелами между разрядами
+export const formattedNumber = (number) => {
+	return number.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+};

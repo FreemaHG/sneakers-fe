@@ -1,4 +1,4 @@
-import ButtonBack from '../../../components/Button/ButtonBack/ButtonBack.jsx';
+import ButtonBack from '../../../components/Buttons/ButtonBack/ButtonBack.jsx';
 
 import styles from './EmptyCart.module.scss';
 
