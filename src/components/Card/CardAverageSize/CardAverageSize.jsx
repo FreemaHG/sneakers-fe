@@ -80,12 +80,6 @@ const CardAverageSize = ({ product }) => {
 
 	return (
 		<div className={styles['card']}>
-			{/*<img*/}
-			{/*	className={styles['favourite-icon']}*/}
-			{/*	src={isAddedToFavourite ? '/images/icons/heart-liked.svg' : '/images/icons/heart-unliked.svg'}*/}
-			{/*	alt={isAddedToFavourite ? 'Удалить товар из избранного' : 'Добавить товар в избранное'}*/}
-			{/*	onClick={changeStatusToFavourite}*/}
-			{/*/>*/}
 			<ButtonAddFavourite
 				className={styles['favourite-icon']}
 				isActive={isAddedToFavourite}
