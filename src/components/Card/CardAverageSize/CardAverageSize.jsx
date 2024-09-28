@@ -4,7 +4,7 @@ import axios from 'axios';
 import { CartContext } from '../../../context/CartContextProvider.jsx';
 import getEnvVariables from '../../../helpers/envVariables.js';
 import { FavouriteContext } from '../../../context/FavouriteContextProvider.jsx';
-import { formattedNumber } from '../../../helpers/numbers.js';
+import { formattedNumber } from '../../../helpers/price.js';
 import ButtonAddCart from '../../Buttons/ButtonAddCart/ButtonAddCart.jsx';
 import ButtonAddFavourite from '../../Buttons/ButtonAddFavourite/ButtonAddFavourite.jsx';
 

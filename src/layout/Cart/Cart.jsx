@@ -1,18 +1,20 @@
 import { useContext } from 'react';
 
-import { CartContext } from '../../../context/CartContextProvider.jsx';
-import CardSmallSize from '../../../components/Card/CardSmallSize/CardSmallSize.jsx';
-import ButtonAhead from '../../../components/Buttons/ButtonAhead/ButtonAhead.jsx';
-import { getTotalSum } from '../../../helpers/numbers.js';
+import { CartContext } from '../../context/CartContextProvider.jsx';
+import CardSmallSize from '../../components/Card/CardSmallSize/CardSmallSize.jsx';
+import ButtonAhead from '../../components/Buttons/ButtonAhead/ButtonAhead.jsx';
+import { getTotalSum } from '../../helpers/price.js';
 
-import styles from './FullCart.module.scss';
+import styles from './Cart.module.scss';
 
 
 /**
  * @component
  * @description Блок с товарами корзины
+ * @prop {function} onClick - функция для оформления заказа
+ * @prop {boolean} loading - флаг для определения загрузки оформления нового заказа
  */
-const FullCart = () => {
+const Cart = ({ onClick, loading }) => {
 
 	// получаем данные из контекста о товарах в корзине
 	const { productsInCart } = useContext(CartContext);
@@ -38,10 +40,10 @@ const FullCart = () => {
 					<div className={styles['border-bottom']}></div>
 					<p className={styles['price']}>500.00 руб.</p>
 				</div>
-				<ButtonAhead>Оформить заказ</ButtonAhead>
+				<ButtonAhead onClick={onClick} disabled={loading}>Оформить заказ</ButtonAhead>
 			</div>
 		</>
 	);
 };
 
-export default FullCart;
+export default Cart;

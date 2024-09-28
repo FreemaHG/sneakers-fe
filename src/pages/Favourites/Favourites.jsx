@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Title from '../../components/Title/Title.jsx';
 import CardAverageSize from '../../components/Card/CardAverageSize/CardAverageSize.jsx';
 import { FavouriteContext } from '../../context/FavouriteContextProvider.jsx';
+import ButtonBackSmall from '../../components/Buttons/ButtonBackSmall/ButtonBackSmall.jsx';
+import InfoBlock from '../../components/InfoBlock/InfoBlock.jsx';
 
 import styles from './Favourites.module.scss';
-import ButtonBackSmall from '../../components/Buttons/ButtonBackSmall/ButtonBackSmall.jsx';
-import ButtonBack from '../../components/Buttons/ButtonBack/ButtonBack.jsx';
-import { useNavigate } from 'react-router-dom';
 
 
 /**
@@ -39,10 +39,12 @@ const Favourites = () => {
 					</div>
 				</>
 				: <div className={styles['not-favourite-block']}>
-						<img className={styles['image']} src="/images/not_favourite_smile.png" alt="Нет закладок"/>
-						<h2 className={styles['title']}>Закладок нет :(</h2>
-						<p className={styles['description']}>Вы ничего не добавляли в закладки</p>
-						<ButtonBack onClick={() => navigate('/')}>Вернуться назад</ButtonBack>
+						<InfoBlock
+							image="/images/not_favourite_smile.png"
+							title="Закладок нет :("
+							description="Вы ничего не добавляли в закладки"
+							onClose={() => navigate('/')}
+						/>
 				</div>
 			}
 		</main>

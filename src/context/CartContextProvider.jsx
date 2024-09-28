@@ -39,6 +39,9 @@ export function cartReducer(state, action) {
 		case "DELETE":
 			// возвращаем массив с товарами, чьи id не равны переданному
 			return state.filter(product => product.id !== action.id);
+		// очистка корзины (при оформлении заказа)
+		case "CLEAR":
+			return [];
 		// возврат значения без изменений, если никакое из условий не подошло
 		default:
 			return state;

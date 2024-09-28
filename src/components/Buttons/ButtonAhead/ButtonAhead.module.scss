@@ -1,6 +1,18 @@
 .btn-ahead {
   position: relative;
 
+  // блокировка кнопки и анимаций (при ожидании ответа от сервера)
+  &:disabled {
+    background-color: var(--color-gray-first);
+    cursor: default;
+
+    &:hover {
+      img {
+        transform: translateX(0px);
+      }
+    }
+  }
+
   &:hover {
     img {
       transform: translateX(5px);
@@ -14,3 +26,4 @@
     transition-duration: var(--transition-duration);
   }
 }
+

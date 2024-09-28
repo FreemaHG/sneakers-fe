@@ -6,7 +6,7 @@ import styles from './ButtonBack.module.scss';
  * @component
  * @description Кнопка назад
  * @prop {component} children - содержимое кнопки
- * @prop {function} onClick - функция, вызывающая действие, необходимое при клике по кнопке
+ * @prop {function} onClick - функция для закрытия садбара / возврата на главную страницу
  */
 const ButtonBack = ({ children, onClick }) => {
 	return (

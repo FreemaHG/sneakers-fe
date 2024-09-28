@@ -1,4 +1,4 @@
-.empty-cart {
+.block {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,8 +6,6 @@
 }
 
 .image {
-  width: 120px;
-  aspect-ratio: 1;
   margin-bottom: 20px;
 }
 
@@ -17,10 +15,15 @@
   font-weight: 600;
 }
 
+.title-green {
+  color: #87C20A;
+}
+
 .description {
   width: 285px;
   margin-bottom: 40px;
   color: var(--color-dark-gray);
   text-align: center;
   font-size: 16px;
+  line-height: 1.5;
 }

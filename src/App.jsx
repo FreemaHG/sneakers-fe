@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import axios from 'axios';
 
 import Header from './components/Header/Header.jsx';
-import PopUpSidebar from './components/PopUpSidebar/PopUpSidebar.jsx';
+import PopUpSidebar from './layout/PopUpSidebar/PopUpSidebar.jsx';
 import { CartContext } from './context/CartContextProvider.jsx';
 import { FavouriteContext } from './context/FavouriteContextProvider.jsx';
 import getEnvVariables from './helpers/envVariables.js';
@@ -42,7 +42,7 @@ function App() {
 		<div className="wrapper">
 			{openSidebar && <PopUpSidebar onClose={closeSidebar} />}
 			<Header openSidebar={setOpenSidebar} />
-			<div className="container">
+			<div className="container container--pb60">
 				{/* вместо Outlet будут подставляться компоненты, вызываемые роутом по соответствующим URL */}
 				<Outlet/>
 			</div>

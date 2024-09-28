@@ -5,7 +5,7 @@ import { CartContext } from '../../../context/CartContextProvider.jsx';
 import styles from './CardSmallSize.module.scss';
 import getEnvVariables from '../../../helpers/envVariables.js';
 import axios from 'axios';
-import { formattedNumber } from '../../../helpers/numbers.js';
+import { formattedNumber } from '../../../helpers/price.js';
 
 /**
  * @component

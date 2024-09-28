@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Main from './pages/Main/Main.jsx';
 import App from './App.jsx';
 import Favourites from './pages/Favourites/Favourites.jsx';
+import Orders from './pages/Orders/Orders.jsx';
 
 // описание всех роутов (страниц)
 const router = createBrowserRouter([
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/orders",
-				element: <p>Мои покупки</p>
+				element: <Orders />
 			},
 		],
 	},
