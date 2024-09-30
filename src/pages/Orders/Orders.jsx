@@ -7,9 +7,10 @@ import CardAverageSize from '../../components/Card/CardAverageSize/CardAverageSi
 import ButtonBackSmall from '../../components/Buttons/ButtonBackSmall/ButtonBackSmall.jsx';
 import InfoBlock from '../../components/InfoBlock/InfoBlock.jsx';
 import getEnvVariables from '../../helpers/envVariables.js';
+import getOrderProducts from '../../helpers/orderProducts.js';
 
 import styles from './Orders.module.scss';
-import getOrderProducts from '../../helpers/orderProducts.js';
+
 
 /**
  * @component

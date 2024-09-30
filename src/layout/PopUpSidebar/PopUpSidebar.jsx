@@ -18,8 +18,6 @@ import styles from './PopUpSidebar.module.scss';
  */
 const PopUpSidebar = ({ visibleSidebar, onClose }) => {
 
-	console.log(visibleSidebar)
-
 	// переменные окружения
 	const envVariables = getEnvVariables();
 

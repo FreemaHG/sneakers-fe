@@ -1,0 +1,10 @@
+services:
+
+  sneakers-fe:
+    container_name: sneakers-fe
+    build:
+      context: .
+    ports:
+      - '80:80'
+
+  # TODO Контейнер с be
