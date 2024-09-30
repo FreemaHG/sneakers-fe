@@ -6,9 +6,23 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
+  // по умолчанию сайдбар скрыт (невидим и прозрачен)
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity var(--transition-duration) ease-out, visibility var(--transition-duration) ease-out;
 
   &:hover {
     cursor: pointer;
+  }
+}
+
+.overlay-visible {
+  // делаем садбар видимым
+  visibility: visible;
+  opacity: 1;
+
+  .sidebar {
+    transform: translateX(0);
   }
 }
 
@@ -23,6 +37,9 @@
   z-index: 2;
   background: var(--color-white);
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  // по умолчанию сайдбар смещен за пределы экрана на всю ширину
+  transform: translateX(100%);
+  transition: transform var(--transition-duration) ease-in-out;
 
   &:hover {
     cursor: auto;

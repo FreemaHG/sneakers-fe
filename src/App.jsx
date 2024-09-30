@@ -15,7 +15,7 @@ function App() {
 	const envVariables = getEnvVariables();
 
 	// флаг для открытия и закрытия сайдбара
-	const [openSidebar, setOpenSidebar] = useState(false);
+	const [visibleSidebar, setVisibleSidebar] = useState(false);
 
 	// данные из контекста о товарах в корзине и избранных товарах
 	const { dispatchCart } = useContext(CartContext);
@@ -36,12 +36,10 @@ function App() {
 		getFavouriteProducts();
 	}, []);
 
-	const closeSidebar = () => setOpenSidebar(false);
-
 	return (
 		<div className="wrapper">
-			{openSidebar && <PopUpSidebar onClose={closeSidebar} />}
-			<Header openSidebar={setOpenSidebar} />
+			<PopUpSidebar visibleSidebar={visibleSidebar} onClose={() => setVisibleSidebar(false)} />
+			<Header openSidebar={setVisibleSidebar} />
 			<div className="container container--pb60">
 				{/* вместо Outlet будут подставляться компоненты, вызываемые роутом по соответствующим URL */}
 				<Outlet/>

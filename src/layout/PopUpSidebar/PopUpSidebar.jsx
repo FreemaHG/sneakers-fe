@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import axios, { AxiosError } from 'axios';
+import cn from 'classnames';
 
 import { CartContext } from '../../context/CartContextProvider.jsx';
 import Cart from '../Cart/Cart.jsx';
@@ -12,9 +13,12 @@ import styles from './PopUpSidebar.module.scss';
 /**
  * @component
  * @description Сайдбар с товарами в корзине
+ * @prop {boolean} visibleSidebar - флаг для отображения / скрытия сайдбара
  * @prop {function} onClose - функция для закрытия сайдбара
  */
-const PopUpSidebar = ({ onClose }) => {
+const PopUpSidebar = ({ visibleSidebar, onClose }) => {
+
+	console.log(visibleSidebar)
 
 	// переменные окружения
 	const envVariables = getEnvVariables();
@@ -57,7 +61,9 @@ const PopUpSidebar = ({ onClose }) => {
 	};
 
 	return (
-		<div className={styles['overlay']} onClick={onClose}>
+		<div className={cn(styles['overlay'], {
+			[styles['overlay-visible']]: visibleSidebar
+		})} onClick={onClose}>
 			{/* event.stopPropagation() останавливаем действие при клике по самому сайдбару (чтобы сайдбар не закрывался) */}
 			<div className={styles['sidebar']} onClick={event => event.stopPropagation()}>
 				<div className={styles['header']}>

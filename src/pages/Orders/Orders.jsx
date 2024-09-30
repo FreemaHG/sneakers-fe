@@ -9,6 +9,7 @@ import InfoBlock from '../../components/InfoBlock/InfoBlock.jsx';
 import getEnvVariables from '../../helpers/envVariables.js';
 
 import styles from './Orders.module.scss';
+import getOrderProducts from '../../helpers/orderProducts.js';
 
 /**
  * @component
@@ -28,7 +29,7 @@ const Orders = () => {
 		try {
 			setIsLoading(true);
 			const { data } = await axios.get(`${envVariables.BASE_URL}/orders`);
-			setProducts(data);
+			setProducts(getOrderProducts(data));
 			setIsLoading(false);
 		} catch (error) {
 			if (error instanceof AxiosError) {
